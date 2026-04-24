@@ -1,2 +1,2 @@
-# ciberlabciencias
-Laboratorio de lo estados de la materia
+# Ciberlab Ciencias Naturales
+Laboratorio de los estados de la materia
