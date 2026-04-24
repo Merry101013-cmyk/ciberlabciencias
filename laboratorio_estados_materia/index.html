@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio de Estados de la Materia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Laboratorio interactivo</p>
+        <h1>Estados de la materia</h1>
+        <p>Explora como el calor y el frio cambian cosas de todos los dias.</p>
+      </div>
+      <img class="hero-logo" src="logo-cibercolegio-ucn.png" alt="Cibercolegio UCN Institucion Educativa">
+    </header>
+
+    <section class="workspace" aria-label="Simulador educativo">
+      <section class="simulation-panel" aria-labelledby="simulation-title">
+        <div class="panel-title">
+          <div>
+            <p class="eyebrow">Zona central</p>
+            <h2 id="simulation-title">Recipiente de particulas</h2>
+          </div>
+          <div class="material-tag" id="materialTag">💧 Agua</div>
+        </div>
+
+        <div class="lab-stage">
+          <div class="thermometer" aria-label="Termometro">
+            <div class="tube">
+              <div class="mercury" id="thermoFill"></div>
+            </div>
+            <div class="bulb"></div>
+            <span id="tempBubble">20°C</span>
+          </div>
+
+          <div class="beaker-wrap">
+            <canvas id="matterCanvas" width="760" height="480" aria-label="Animacion de particulas"></canvas>
+            <div class="beaker-shine"></div>
+            <div class="state-ribbon" id="stateRibbon">Liquido</div>
+          </div>
+        </div>
+
+        <div class="heat-control" aria-label="Control de calor y frio">
+          <span>❄️ Frio</span>
+          <input id="temperatureSlider" type="range" min="0" max="100" value="45">
+          <span>🔥 Calor</span>
+        </div>
+
+        <div class="action-row">
+          <button class="primary-button" id="toggleButton" type="button">⏸️ Pausar</button>
+          <button class="secondary-button" id="resetButton" type="button">🔄 Reiniciar</button>
+        </div>
+      </section>
+
+      <aside class="side-panel" aria-label="Materiales y datos">
+        <section class="card materials-card">
+          <div class="panel-title compact">
+            <div>
+              <p class="eyebrow">Panel derecho</p>
+              <h2>Materiales cotidianos</h2>
+            </div>
+          </div>
+          <div class="material-list" id="materialList" aria-label="Lista de materiales"></div>
+        </section>
+
+        <section class="card">
+          <p class="eyebrow">Botones de estado</p>
+          <h2>Prueba un cambio</h2>
+          <div class="state-buttons" role="group" aria-label="Seleccionar estado">
+            <button type="button" data-state="solid">🧊 Solido</button>
+            <button type="button" data-state="liquid">💧 Liquido</button>
+            <button type="button" data-state="gas">💨 Gas</button>
+          </div>
+        </section>
+
+        <section class="card info-card" aria-live="polite">
+          <p class="eyebrow">Panel informativo</p>
+          <h2>Que esta pasando</h2>
+          <dl>
+            <div>
+              <dt>Material</dt>
+              <dd id="infoMaterial">Agua</dd>
+            </div>
+            <div>
+              <dt>Estado actual</dt>
+              <dd id="infoState">Liquido</dd>
+            </div>
+            <div>
+              <dt>Temperatura</dt>
+              <dd id="infoTemp">20°C</dd>
+            </div>
+          </dl>
+          <p class="kid-note" id="kidNote">El agua puede quedarse quieta como hielo, correr como liquido o subir como vapor.</p>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="credits">
+      <strong>Developed by Mary J. Galeano</strong>
+      <span>Cibercolegio UCN</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
